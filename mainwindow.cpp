@@ -53,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->btnColor_6,&QPushButton::clicked,this,&MainWindow::on_colorChanged6);
 
 
-
     ui -> valuelabel -> setText(QString::number(ui->slider->value()));
     w = ui->imageDisplayLabel->width();
     h = ui->imageDisplayLabel->height();
@@ -178,7 +177,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_slider_valueChanged(int value)
 {
     ui -> valuelabel -> setText(QString::number(ui->slider->value()));
-    double factor = ui->slider->value()/50.0;
+    double factor = ui->slider->value()/100.0;
     ui->imageDisplayLabel->setFixedSize(w*factor,h*factor);
 }
 
