@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>642</width>
-    <height>581</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -61,10 +61,10 @@
    <widget class="QLabel" name="imageDisplayLabel">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>60</y>
-      <width>521</width>
-      <height>381</height>
+      <x>10</x>
+      <y>50</y>
+      <width>270</width>
+      <height>203</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -75,9 +75,12 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>400</width>
-      <height>300</height>
+      <width>270</width>
+      <height>203</height>
      </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(188, 188, 188)</string>
     </property>
     <property name="text">
      <string/>
@@ -129,7 +132,7 @@
     <property name="geometry">
      <rect>
       <x>540</x>
-      <y>490</y>
+      <y>500</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -141,8 +144,8 @@
    <widget class="QPushButton" name="btnColor_1">
     <property name="geometry">
      <rect>
-      <x>185</x>
-      <y>480</y>
+      <x>180</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -172,8 +175,8 @@
    <widget class="QPushButton" name="btnColor_2">
     <property name="geometry">
      <rect>
-      <x>242</x>
-      <y>480</y>
+      <x>240</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -203,8 +206,8 @@
    <widget class="QPushButton" name="btnColor_3">
     <property name="geometry">
      <rect>
-      <x>299</x>
-      <y>480</y>
+      <x>300</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -234,8 +237,8 @@
    <widget class="QPushButton" name="btnColor_4">
     <property name="geometry">
      <rect>
-      <x>356</x>
-      <y>480</y>
+      <x>360</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -265,8 +268,8 @@
    <widget class="QPushButton" name="btnColor_5">
     <property name="geometry">
      <rect>
-      <x>413</x>
-      <y>480</y>
+      <x>420</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -296,8 +299,8 @@
    <widget class="QPushButton" name="btnColor_6">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>480</y>
+      <x>480</x>
+      <y>500</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -337,6 +340,41 @@
      <string>Кадр</string>
     </property>
    </widget>
+   <widget class="QSlider" name="slider">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>560</y>
+      <width>361</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="valuelabel">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>559</y>
+      <width>63</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Масштаб</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -344,7 +382,7 @@
      <x>0</x>
      <y>0</y>
      <width>642</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
