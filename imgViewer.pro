@@ -33,7 +33,6 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         mono.cpp \
-        mono.cpp \
         quantizationmethod.cpp
 
 HEADERS += \
@@ -44,14 +43,12 @@ HEADERS += \
         kmeansmethod.h \
         mainwindow.h \
         mono.h \
-        mono.h \
         quantizationmethod.h
 
 FORMS += \
         cutdialog.ui \
         mainwindow.ui \
         mono.ui \
-        mono.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
