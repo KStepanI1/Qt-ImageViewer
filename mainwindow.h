@@ -35,6 +35,8 @@ private slots:
 
     void on_action_2_triggered();
 
+    void on_slider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     QLabel  *imageLabel;
@@ -46,6 +48,8 @@ private:
     QString imagePath;
     QColor color;
     std::vector<QPushButton*> btns;
+
+    int w,h;
 
     void on_colorChanged1();
     void on_colorChanged2();
