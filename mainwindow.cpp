@@ -24,42 +24,48 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->btnColor_1->setParent(this);
     btns.push_back(ui->btnColor_1);
-    color = ui->btnColor_1->palette().color(QPalette::Background);
+    color = ui->btnColor_1->palette().color(QPalette::Window);
     connect(ui->btnColor_1,&QPushButton::clicked,this,&MainWindow::on_colorChanged1);
 
     ui->btnColor_2->setParent(this);
     btns.push_back(ui->btnColor_2);
-    color = ui->btnColor_2->palette().color(QPalette::Background);
+    color = ui->btnColor_2->palette().color(QPalette::Window);
     connect(ui->btnColor_2,&QPushButton::clicked,this,&MainWindow::on_colorChanged2);
 
     ui->btnColor_3->setParent(this);
     btns.push_back(ui->btnColor_3);
-    color = ui->btnColor_3->palette().color(QPalette::Background);
+    color = ui->btnColor_3->palette().color(QPalette::Window);
     connect(ui->btnColor_3,&QPushButton::clicked,this,&MainWindow::on_colorChanged3);
 
     ui->btnColor_4->setParent(this);
     btns.push_back(ui->btnColor_4);
-    color = ui->btnColor_4->palette().color(QPalette::Background);
+    color = ui->btnColor_4->palette().color(QPalette::Window);
     connect(ui->btnColor_4,&QPushButton::clicked,this,&MainWindow::on_colorChanged4);
 
     ui->btnColor_5->setParent(this);
     btns.push_back(ui->btnColor_5);
-    color = ui->btnColor_5->palette().color(QPalette::Background);
+    color = ui->btnColor_5->palette().color(QPalette::Window);
     connect(ui->btnColor_5,&QPushButton::clicked,this,&MainWindow::on_colorChanged5);
 
     ui->btnColor_6->setParent(this);
     btns.push_back(ui->btnColor_6);
-    color = ui->btnColor_6->palette().color(QPalette::Background);
+    color = ui->btnColor_6->palette().color(QPalette::Window);
     connect(ui->btnColor_6,&QPushButton::clicked,this,&MainWindow::on_colorChanged6);
+
+
+
+    ui -> valuelabel -> setText(QString::number(ui->slider->value()));
+    w = ui->imageDisplayLabel->width();
+    h = ui->imageDisplayLabel->height();
 }
 
 
 void MainWindow::on_colorChanged1()
 {
     QPalette palette = ui->btnColor_1->palette();
-    QColor oldColor = ui->btnColor_1->palette().color(QPalette::Background);
+    QColor oldColor = ui->btnColor_1->palette().color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -75,9 +81,9 @@ void MainWindow::on_colorChanged1()
 void MainWindow::on_colorChanged2()
 {
     QPalette palette = ui->btnColor_2->palette();
-    QColor oldColor = ui->btnColor_2->palette().color(QPalette::Background);
+    QColor oldColor = ui->btnColor_2->palette().color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -93,9 +99,9 @@ void MainWindow::on_colorChanged2()
 void MainWindow::on_colorChanged3()
 {
     QPalette palette = ui->btnColor_3->palette();
-    QColor oldColor = ui->btnColor_3->palette().color(QPalette::Background);
+    QColor oldColor = ui->btnColor_3->palette().color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -111,9 +117,9 @@ void MainWindow::on_colorChanged3()
 void MainWindow::on_colorChanged4()
 {
     QPalette palette = ui->btnColor_4->palette();
-    QColor oldColor = ui->btnColor_4->palette().color(QPalette::Background);
+    QColor oldColor = ui->btnColor_4->palette().color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -129,9 +135,9 @@ void MainWindow::on_colorChanged4()
 void MainWindow::on_colorChanged5()
 {
     QPalette palette = ui->btnColor_5->palette();
-    QColor oldColor = ui->btnColor_5->palette().color(QPalette::Background);
+    QColor oldColor = ui->btnColor_5->palette().color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -147,9 +153,9 @@ void MainWindow::on_colorChanged5()
 void MainWindow::on_colorChanged6()
 {
     QPalette palette = ui->btnColor_6->palette();
-    QColor oldColor = palette.color(QPalette::Background);
+    QColor oldColor = palette.color(QPalette::Window);
     QColor newColor;
-    newColor = QColorDialog::getColor(color,this,"颜色选择");
+    newColor = QColorDialog::getColor(color,this,"Изменение цвета");
     if(newColor.isValid())
     {
         int r = newColor.red();
@@ -167,6 +173,13 @@ void MainWindow::on_colorChanged6()
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_slider_valueChanged(int value)
+{
+    ui -> valuelabel -> setText(QString::number(ui->slider->value()));
+    double factor = ui->slider->value()/50.0;
+    ui->imageDisplayLabel->setFixedSize(w*factor,h*factor);
 }
 
 void MainWindow::updateColors(QList<Color> colors)
